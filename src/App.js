@@ -4,8 +4,8 @@ import Job from './Job'
 import useFetchJobs from './useFetchJobs';
 import {container} from  'react-bootstrap'
 function App(){
-  const [params, setParams] = useState({})
-  const [page, setPage] = useState(1)
+  const [params] = useState({})
+  const [page, ] = useState(1)
   const {jobs, loading , error} = useFetchJobs(params,page)
   return(
     <container>
