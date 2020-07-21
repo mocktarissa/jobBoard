@@ -1,6 +1,6 @@
 import React, { Component,useState } from 'react';
-
-
+import Job from './Job'
+import {Card} from 'react-bootstrap'
 import useFetchJobs from './useFetchJobs';
 import {container} from  'react-bootstrap'
 function App(){
@@ -14,7 +14,7 @@ function App(){
       {
         jobs.map(
           (j)=>(
-            <h1> {j.description}</h1>
+            <Job key={j.id} job={j}></Job>
           )
 
         )
