@@ -1,6 +1,6 @@
 import axios from 'axios';
-import {useReducer} from 'react';
-
+import {useReducer,useEffect} from 'react';
+const API_URL=`https://jobs.github.com/positions.json`
 const ACTIONS ={
     make_request: 'make-request',
     get_data: 'get-data',
@@ -32,9 +32,21 @@ switch(action.type){
 }
 export default function useFetchJobs(params,page){
     const [state,dispatch] =useReducer(reducer,{jobs:[],loading:true})
-    return {
-        jobs:[],
-        error:true,
-        loading:false,
+
+    useEffect(()=>{
+       dispatch({type:ACTIONS.make_request})
+       axios.get(API_URL,{params:{markdown:true,page:page,...params}
+
+    }).then(
+        res =>{
+        
+        dispatch({type:ACTIONS.get_data,payload:{jobs: res.data}})
     }
+    ).catch(e =>{
+        dispatch({type:ACTIONS.error,payload:{error:e}})
+    })
+           
+    }
+  ,[params,page])
+    return state
 }

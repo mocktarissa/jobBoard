@@ -6,7 +6,7 @@ function App(){
   return(
     <container>
       {loading && <h1>Loading ....</h1>}
-      {error && <h1>Error Plead refresh the page</h1>}
+      {error && <h1>Error Please refresh the page</h1>}
       {jobs.length}
     </container>
   )
