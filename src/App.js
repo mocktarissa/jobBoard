@@ -11,7 +11,14 @@ function App(){
     <container>
       {loading && <h1>Loading ....</h1>}
       {error && <h1>Error Please refresh the page</h1>}
-      {jobs.length}
+      {
+        jobs.map(
+          (j)=>(
+            <h1> {j.description}</h1>
+          )
+
+        )
+      }
     </container>
   )
 }
