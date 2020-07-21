@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
-  render() { 
-    return ( <div>
-      Hello world
-    </div> );
-  }
+imprt useFetchJobs from './useFetchJobs'
+function App(){
+  const {jobs, loading , error} = useFetchJobs()
 }
- 
 export default App;
