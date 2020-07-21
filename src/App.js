@@ -1,6 +1,6 @@
-import React, { Component,useState } from 'react';
+import React, { useState } from 'react';
 import Job from './Job'
-import {Card} from 'react-bootstrap'
+
 import useFetchJobs from './useFetchJobs';
 import {container} from  'react-bootstrap'
 function App(){
