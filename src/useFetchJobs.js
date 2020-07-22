@@ -4,7 +4,8 @@ const API_URL=`https://thingproxy.freeboard.io/fetch/https://jobs.github.com/pos
 const ACTIONS ={
     make_request: 'make-request',
     get_data: 'get-data',
-    error:'rerror'
+    error:'rerror',
+    update_has_next_page:"update-has-next-page"
 }
 function reducer(state,action){
 switch(action.type){
@@ -25,6 +26,11 @@ switch(action.type){
             loading:false,
             error:action.payload.error,
             jobs:[]
+        }
+    case ACTIONS.update_has_next_page:
+        return {
+            ...state,
+            hasNextPage:action.payload.hasNextPage
         }
     default :
     return state

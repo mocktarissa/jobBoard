@@ -3,7 +3,7 @@ import {Card,Badge, Button, Collapse} from 'react-bootstrap'
 import ReactMarkdown from 'react-markdown'
 export default function Job({job}){
     var [showDetail,setShowDetail]= useState(false);
-    return <Card>
+    return <Card className="mb-3">
         <Card.Body>
          <div className="d-flex justify-content-between">
 
@@ -24,7 +24,7 @@ export default function Job({job}){
                     <ReactMarkdown source={job.how_to_apply}></ReactMarkdown>
                 </div>
              </div>
-             <img className="d-none d-md-block" alt={job.company} height="50"src={job.company_logo} />
+             <img className="d-none d-md-block" alt={job.company} height="50" max-width="100"src={job.company_logo} />
              </div> 
                <Card.Text>
                    <Button onClick={()=>setShowDetail(prev => !prev)} variant="primary">
