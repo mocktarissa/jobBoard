@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {useReducer,useEffect} from 'react';
-const API_URL=`https://thingproxy.freeboard.io/fetch/https://jobs.github.com/positions.json`
+const API_URL='https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json'
 const ACTIONS ={
     make_request: 'make-request',
     get_data: 'get-data',
